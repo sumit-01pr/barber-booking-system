@@ -1,3 +1,6 @@
+import DashboardLayout
+from "../layouts/DashboardLayout";
+
 import {
   useAuth,
 } from "../context/AuthContext";
@@ -6,47 +9,37 @@ function Home() {
 
   const {
     user,
-    logout,
   } = useAuth();
 
   return (
 
-    <div
-      className="
-      min-h-screen
-      flex
-      flex-col
-      items-center
-      justify-center
-      gap-5
-    "
-    >
+    <DashboardLayout>
 
-      <h1
-        className="
-        text-4xl
-        font-bold
-      "
-      >
-        Welcome
-        {" "}
-        {user?.name}
-      </h1>
+      <div>
 
-      <button
-        onClick={logout}
-        className="
-        bg-black
-        text-white
-        px-6
-        py-3
-        rounded-lg
-      "
-      >
-        Logout
-      </button>
+        <h1
+          className="
+          text-3xl
+          font-bold
+          mb-2
+        "
+        >
+          Welcome back,
+          {" "}
+          {user?.name}
+        </h1>
 
-    </div>
+        <p
+          className="
+          text-zinc-500
+        "
+        >
+          Manage your barber booking system.
+        </p>
+
+      </div>
+
+    </DashboardLayout>
 
   );
 
