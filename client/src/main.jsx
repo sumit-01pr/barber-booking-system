@@ -5,13 +5,17 @@ import App from './App.jsx'
 import {
   AuthProvider
 }
-from "./context/AuthContext";
+  from "./context/AuthContext";
+
+  import {
+  Toaster,
+} from "react-hot-toast";
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-   <AuthProvider>
-
-  <App />
-
-</AuthProvider>
+    <AuthProvider>
+       <Toaster />
+      <App />
+      
+    </AuthProvider>
   </StrictMode>,
 )
