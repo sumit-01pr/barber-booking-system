@@ -10,6 +10,12 @@ from "./pages/Login";
 import Register
 from "./pages/Register";
 
+import Home
+from "./pages/Home";
+
+import ProtectedRoute
+from "./routes/ProtectedRoute";
+
 function App() {
 
   return (
@@ -26,6 +32,17 @@ function App() {
         <Route
           path="/register"
           element={<Register />}
+        />
+
+        <Route
+          path="/"
+          element={
+            <ProtectedRoute>
+
+              <Home />
+
+            </ProtectedRoute>
+          }
         />
 
       </Routes>

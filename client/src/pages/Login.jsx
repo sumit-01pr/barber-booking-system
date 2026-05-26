@@ -70,9 +70,12 @@ function Login() {
             formData
           );
 
-        setUser(
-          data.user
-        );
+       setUser(data.user)
+
+localStorage.setItem(
+  "user",
+  JSON.stringify(data.user)
+)
 
         toast.success(
           data.message
